@@ -1,4 +1,12 @@
 module NotesHelper
+  require "redcarpet"
+  require "rouge"
+  require "rouge/plugins/redcarpet"
+  
+  class RougeHTML < Redcarpet::Render::HTML
+    include Rouge::Plugins::Redcarpet
+  end
+  
   def markdown(text)
     extensions = %i[
         hard_wrap autolink no_intra_emphasis tables fenced_code_blocks
@@ -30,7 +38,8 @@ module NotesHelper
       highlight: true,
       underline: true
     }
-    renderer = Redcarpet::Render::HTML.new(render_options)
+    # renderer = Redcarpet::Render::HTML.new(render_options)
+    renderer = RougeHTML.new(render_options)
     Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
   end
 end

@@ -74,3 +74,5 @@ end
 gem "faker", "~> 2.20"
 
 gem "redcarpet", "~> 3.5"
+
+gem "rouge", "~> 3.28"

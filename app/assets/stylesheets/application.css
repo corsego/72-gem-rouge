@@ -14,10 +14,20 @@
  *= require_self
  */
 
-code {
-  color: red;
-}
+@import "rouge";
+/*@import "github";*/
 
-pre {
-  background-color: silver;
-}
+/*code {*/
+/*  color: black;*/
+/*  background: silver;*/
+/*}*/
+
+/*pre {*/
+/*  padding: 1rem;*/
+/*  background: silver;*/
+/*  border-radius: 5px;*/
+/*}*/
+
+/*pre code {*/
+/*  color: blue;*/
+/*}*/
